@@ -1,0 +1,104 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 250px;
+  transform: rotate(-90deg);
+}
+
+.progress-ring circle {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 10;
+  stroke-dasharray: 754;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+
+  /* Mejorar renderizado */
+  vector-effect: non-scaling-stroke;
+  shape-rendering: geometricPrecision;
+}
+
+#time {
+  font-size: 2.5em;
+  z-index: 1;
+}
+
+.buttons {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  background: none;
+  border: 2px solid #fff;
+  padding: 5px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  color: #fff;
+  transition: background 0.3s, color 0.3s;
+
+  /* Bordes redondeados y renderizado suave */
+  border-radius: 50px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button:hover {
+  background: #fff;
+  color: #000;
+}
+
+@media (max-width: 500px) {
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .buttons button {
+    width: 100%;
+    max-width: 300px;
+    margin: 5px 0;
+    border-radius: 50px;
+  }
+}
